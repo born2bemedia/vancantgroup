@@ -6,6 +6,7 @@ import "@/public/scss/header.scss";
 import Facebook from "./LayoutElements/socials/Facebook";
 import Instagram from "./LayoutElements/socials/Instagram";
 import Twitter from "./LayoutElements/socials/Twitter";
+import LinkedIn from "./LayoutElements/socials/LinkedIn";
 
 export default function Header({
   home,
@@ -71,6 +72,7 @@ export default function Header({
                 <Facebook />
                 <Instagram />
                 <Twitter />
+                <LinkedIn />
               </div>
               <span onClick={() => menuOpen()} className="menu-btn">
                 {!opened ? (
@@ -103,6 +105,7 @@ export default function Header({
             <Facebook />
             <Instagram />
             <Twitter />
+            <LinkedIn />
           </div>
         </div>
       </div>

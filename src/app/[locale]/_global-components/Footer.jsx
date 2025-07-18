@@ -3,6 +3,7 @@ import { Link } from "@/src/navigation";
 import Facebook from "@/src/app/[locale]/_global-components/LayoutElements/socials/Facebook";
 import Instagram from "@/src/app/[locale]/_global-components/LayoutElements/socials/Instagram";
 import Twitter from "@/src/app/[locale]/_global-components/LayoutElements/socials/Twitter";
+import LinkedIn from "@/src/app/[locale]/_global-components/LayoutElements/socials/LinkedIn";
 import { useTranslations } from "next-intl";
 
 function Footer() {
@@ -24,6 +25,7 @@ function Footer() {
                 <Facebook />
                 <Instagram />
                 <Twitter />
+                <LinkedIn size={40} />
               </div>
             </div>
             <div className="navigation">
