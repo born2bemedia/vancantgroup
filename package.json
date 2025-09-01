@@ -26,6 +26,7 @@
     "react-circular-progressbar": "^2.1.0",
     "react-datepicker": "^6.8.0",
     "react-dom": "^18",
+    "react-google-recaptcha": "^3.1.0",
     "react-slick": "^0.30.2",
     "react-visibility-sensor": "^5.1.1",
     "sass": "^1.72.0",

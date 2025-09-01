@@ -12,6 +12,7 @@ import * as Yup from "yup";
 import { usePopup } from "@/src/utils/PopupsContext";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const CustomInput = React.forwardRef(
   ({ value, onClick, inputPlaceholder }, ref) => (
@@ -62,7 +63,12 @@ function RequestPopup({
   validation_email,
 }) {
   const { requestPopupDisplay, setRequestPopupDisplay } = usePopup();
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
   const [resetFormFunction, setResetFormFunction] = useState(() => () => {});
+
+  const onCaptchaVerify = (token) => {
+    setIsCaptchaVerified(!!token);
+  };
 
   const validationSchema = Yup.object({
     name: Yup.string().required(validation_required),
@@ -289,12 +295,12 @@ function RequestPopup({
                           component="div"
                           className="error"
                         />
+                        <ReCAPTCHA style={{margin: '12px auto', display: 'flex', justifyContent: 'center'}} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onCaptchaVerify} />
                       </div>
-
                       <button
                         type="submit"
                         className="main-button"
-                        disabled={isSubmitting}
+                        disabled={isSubmitting || !isCaptchaVerified}
                       >
                         {requestPopup_submitButton}
                       </button>
